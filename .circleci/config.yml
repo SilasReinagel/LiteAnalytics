@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.0
     steps:
-      - checkout:
+      - checkout
       - run:
           name: Restore packages
           command: dotnet restore
