@@ -5,10 +5,11 @@ jobs:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.0
     steps:
       - checkout:
-          path: ~/src
       - run:
           name: Restore packages
           command: dotnet restore
+          working_directory: src
       - run:
           name: Build
           command: dotnet build
+          working_directory: src
