@@ -4,12 +4,11 @@ jobs:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.0
     steps:
-      - checkout
-        path: ~/src
+      - checkout:
+          path: ~/src
       - run:
           name: Restore packages
           command: dotnet restore
       - run:
           name: Build
           command: dotnet build
-          
