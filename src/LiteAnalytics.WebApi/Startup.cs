@@ -19,6 +19,7 @@ namespace LiteAnalytics.WebApi
         {
             services.AddAuthorization();
             services.AddResponseCompression();
+            services.AddRouting();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
