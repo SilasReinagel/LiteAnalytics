@@ -33,7 +33,15 @@ namespace LiteAnalytics.WebApi
             app.UseRouter(r =>
             {
                 r.MapGet("status", async (request, response, routeData) => { await response.WriteAsync("Hello, World", Encoding.UTF8); });
+                
+                RegisterPropertyAdministrationEndpoints("api", r);
             });
+        }
+
+        private void RegisterPropertyAdministrationEndpoints(string basePath, IRouteBuilder r)
+        {
+            r.MapPut($"{basePath}/property", 
+                async (request, response, routeData) => { await response.WriteAsync("{ \"id\": \"1234\" }", Encoding.UTF8); });
         }
     }
 }
